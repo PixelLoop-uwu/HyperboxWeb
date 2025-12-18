@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hyperbox - шаблон</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+
+    <div id="vanta-bg"></div>
+
+    <main class="page">
+      <!-- <header></header> -->
+
+      <section class="hero">
+        <div class="logo-wrap">
+          <img src="./logo.png" alt="Hyperbox logo" />
+        </div>
+
+        <div class="headline">
+          <div>
+            <div class="title">Hyperbox</div>
+            <div class="slogan">Фемто сервера майнкрафт</div>
+          </div>
+          <div style="opacity:0.85; margin-top:6px; font-size:16px;">Полуприватный майнкрафт сервер с модами.</div>
+        </div>
+
+        <div class="apply-button">
+          <a href="https://discord.gg/nJK3yJK88k">Подать заявку</a>
+        </div>
+      </section>
+
+      <section class="servers">
+        <article class="server-card">
+          <div class="server-media">
+            <img src="soon.png" alt="Server 1" />
+          </div>
+          <div class="server-info">
+            <div>
+              <h3>Server 1 - заголовок</h3>
+              <p>Короткая заглушка описания сервера. Здесь можно указать режим, версии и прочее.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="server-card">
+          <div class="server-media">
+            <img src="soon.png" alt="Server 2" />
+          </div>
+          <div class="server-info">
+            <div>
+              <h3>Server 2 - заголовок</h3>
+              <p>Вторая заглушка. Замени на реальные скриншоты и текст по необходимости.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <footer>© Hyperbox. Powered by pixel_loop.</footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.fog.min.js"></script>
+    <script>
+
+      if (typeof VANTA !== 'undefined') {
+        VANTA.FOG({
+          el: '#vanta-bg',
+          mouseControls: false,
+          touchControls: false,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          highlightColor: 0x2c2c2c,
+          midtoneColor: 0x272727,
+          lowlightColor: 0x151515,
+          baseColor: 0x1a1a1a,
+          blurFactor: 0.90,
+          speed: 2.0,
+          zoom: 0.50
+        });
+      }
+
+    </script>
+  </body>
+</html>
