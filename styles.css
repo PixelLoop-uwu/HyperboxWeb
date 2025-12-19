@@ -11,22 +11,26 @@
 html,body {
   min-height: 100%;
   margin: 0;
+  padding: 0;
   background: var(--bg);
   color: var(--fg);
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
+body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
   align-items: center;
+  justify-content: flex-start; 
 }
 
 *::selection {
   background-color: rgba(255, 255, 255, 0.25);
 }
  
-/* Контейнер для Vanta фона */
 #vanta-bg {
   position: fixed;
   inset: 0;
@@ -41,8 +45,8 @@ html,body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
   padding: 48px 24px;
+  gap: 48px;
 }
 
 /* Хедер / герой */
