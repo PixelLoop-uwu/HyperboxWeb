@@ -33,7 +33,7 @@
         </div>
 
         <div class="apply-button">
-          <a href="https://discord.gg/nJK3yJK88k">Подать заявку</a>
+          <a href="https://discord.gg/nJK3yJK88k">Присоединиться</a>
         </div>
       </section>
 
@@ -44,8 +44,8 @@
           </div>
           <div class="server-info">
             <div>
-              <h3>Server 1 - заголовок</h3>
-              <p>Короткая заглушка описания сервера. Здесь можно указать режим, версии и прочее.</p>
+              <h3 class="obf">Server 1 - заголовок</h3>
+              <p>Сервер пока находится на ранней стадии разработки, но вы уже можете присоединиться к нашему Discord-серверу и следить за новостями.</p>
             </div>
           </div>
         </article>
@@ -56,8 +56,8 @@
           </div>
           <div class="server-info">
             <div>
-              <h3>Server 2 - заголовок</h3>
-              <p>Вторая заглушка. Замени на реальные скриншоты и текст по необходимости.</p>
+              <h3 class="obf">Server 2 - заголовок</h3>
+              <p>Сервер пока находится на ранней стадии разработки, но вы уже можете присоединиться к нашему Discord-серверу и следить за новостями.</p>
             </div>
           </div>
         </article>
@@ -89,5 +89,40 @@
       }
 
     </script>
+
+    <script>
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      const elements = document.querySelectorAll('.obf');
+
+      const originals = new Map();
+
+      elements.forEach(el => {
+        originals.set(el, el.textContent);
+      });
+
+      function obfuscate() {
+        elements.forEach(el => {
+          const original = originals.get(el);
+          let result = '';
+
+          for (let i = 0; i < original.length; i++) {
+            const char = original[i];
+
+            // пробелы, переносы и табы оставляем как есть
+            if (char === ' ' || char === '\n' || char === '\t') {
+              result += char;
+            } else {
+              result += chars[Math.floor(Math.random() * chars.length)];
+            }
+          }
+
+          el.textContent = result;
+        });
+      }
+
+      setInterval(obfuscate, 20);
+    </script>
+
+
   </body>
 </html>
